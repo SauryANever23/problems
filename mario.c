@@ -16,11 +16,20 @@ void revrse_build(int height)
 {
   for (int i = 1; i <= height; i++)
   {
-    for (int j = height; j >= i; j--)
+    for (int j = i; j <= height; j++)
     {
       printf("#");
     }
     printf("\n");
+  }
+}
+
+void mirror_build(int height)
+{
+  for (int i = 0; i <= height; i++)
+  {
+    char a; 
+
   }
 }
 
@@ -33,6 +42,7 @@ int main(void)
   build(height);
   printf("\n");
   revrse_build(height);
-
+  printf("\n");
+  mirror_build(height);
   return 0;
 }
