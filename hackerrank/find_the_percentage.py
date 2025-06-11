@@ -6,3 +6,8 @@ if __name__ == '__main__':
         scores = list(map(float, line))
         student_marks[name] = scores
     query_name = input()
+
+    obj = student_marks[query_name]
+
+    avj = float(sum(obj)) / float(len(obj))
+    print(f"{avj:.2f}")
