@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void build(int height)
 {
@@ -28,11 +29,12 @@ void mirror_build(int height)
 {
   for (int i = 0; i <= height; i++)
   {
-    char a; 
+    char *var = "%s%s%s%s"
 
   }
 }
 
+    
 int main(void)
 {
   int height;
