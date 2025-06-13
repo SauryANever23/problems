@@ -20,17 +20,17 @@ if __name__ == '__main__':
         n_list = n.split()
 
         if n_list[0].lower() == "insert":
-            ins(n_list[1], n_list[2])
+            ins(int(n_list[1]), int(n_list[2]))
         elif n_list[0].lower() == "print":
             print(lst)
         elif n_list[0].lower() == 'remove':
-            rm(n_list[1])
+            rm(int(n_list[1]))
         elif n_list[0].lower() == 'sort':
             lst.sort()
         elif n_list[0].lower() == 'append':
-            lst.append(n_list[1])
+            lst.append(int(n_list[1]))
         elif n_list[0].lower() == 'pop':
-            lst.pop(lst[-1])
+            lst.pop(int(lst[-1]))
         elif n_list[0].lower() == 'reverse':
             lst.reverse()
 
