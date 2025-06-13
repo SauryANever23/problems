@@ -30,7 +30,7 @@ if __name__ == '__main__':
         elif n_list[0].lower() == 'append':
             lst.append(int(n_list[1]))
         elif n_list[0].lower() == 'pop':
-            lst.pop(int(lst[-1]))
+            lst.pop()
         elif n_list[0].lower() == 'reverse':
             lst.reverse()
 
