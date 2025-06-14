@@ -6,7 +6,7 @@ typedef struct node
   int number;
   struct node *next;
 }
-next;
+node;
 
 int main(int argc, char **argv)
 {
