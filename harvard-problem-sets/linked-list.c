@@ -47,6 +47,16 @@ int main(int argc, char **argv)
     // updating the ptr so that it points to another value in the linked list. 
     ptr = ptr->next; 
   }
+  
+  // Now, as our duty, I am freeing the allocated memory
+  ptr = list; // assigning the the value of ptr as that of list
 
-
+  while (ptr != NULL)
+  {
+    node *next = ptr; // This is a kller move right here. Adding anoter temporary variable for a temporary variable that will
+    // point at the momory we want to free, but will not lose where we want to go next
+    free(ptr);
+    ptr = next;
+  }
+  return 0;
 }
