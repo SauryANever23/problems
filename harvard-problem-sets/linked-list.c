@@ -8,13 +8,13 @@ typedef struct node
 }
 node;
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
   node *list = NULL;
 
   for (int i = 1; i < argc; i++)
   {
-    int num = argv[i]; // initializing the value of pointer
+    int num = atoi(argv[i]); // initializing the value of pointer
 
     node *temp = malloc(sizeof(node)); // allocating memory for the temporary pointer that will point at nodes
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 
   while (ptr != NULL)
   {
-    node *next = ptr; // This is a kller move right here. Adding anoter temporary variable for a temporary variable that will
+    node *next = ptr->next; // This is a kller move right here. Adding anoter temporary variable for a temporary variable that will
     // point at the momory we want to free, but will not lose where we want to go next
     free(ptr);
     ptr = next;
