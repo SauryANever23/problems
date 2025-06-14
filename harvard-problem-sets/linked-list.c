@@ -33,4 +33,20 @@ int main(int argc, char **argv)
     // that is preventing memory leak
     list = temp; // finnay can we initialize the correct value 
   }
+
+  // Now printing the values stored in the linked list
+
+  // initializing a temprary pointer that will point that the first value of list
+  node *ptr = list;
+
+  // we will constatbly change the value of pointer untill the pointer reaches the value of NULL(the last 'next' block)
+  while (ptr != NULL)
+  {
+    printf("%d\n", ptr->number); // printing the number assigned to the first value of list in the node
+
+    // updating the ptr so that it points to another value in the linked list. 
+    ptr = ptr->next; 
+  }
+
+
 }
