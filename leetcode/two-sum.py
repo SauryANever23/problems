@@ -1,13 +1,15 @@
-import random
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        sol_in = []
+    def twoSum(nums: list[int], target: int) -> list[int]:
+        sol = []
         for i, num in enumerate(nums):
-            ran = random.randint(0, len(nums)-1) 
-            if (num + nums[i+ran]) == target:
-                sol_in.append(num)
-                sol_in.append(num)
-        print(sol_in)
+            for j in range(len(nums)):
+                if (num + nums[j]) == target:
+                    sol.append(nums.index(num))
+                    sol.append(nums.index(nums[j]))
+                    break
+            break 
+        print(sol)
+        
+Solution.twoSum([1,3,4,5,6], 5) 
 
-        
-        
+
