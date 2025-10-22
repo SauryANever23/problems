@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int isprime(int num)
 {
@@ -20,10 +21,9 @@ int isprime(int num)
 
 int main(int argc, char *argv[])
 {
-  int num;
-  printf("give num: ");
-  scanf("%d", &num);
-  printf("isprime: %d", isprime(num));
+  int n = atoi(argv[1]);
+  
+  printf("isprime: %d", isprime(n));
 
   return 0;
 }
