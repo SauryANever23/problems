@@ -6,7 +6,7 @@ n = int(input())
 
 final_cnt = 0;
 for _ in range(n):
-    arr = list(map(int, input()))
+    arr = list(map(int, input().split()))
     count = 0
     for i in range(3):
         if arr[i] == 1:
