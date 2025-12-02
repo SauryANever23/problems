@@ -22,4 +22,8 @@ for _ in range(t):
         cards[0] -= 1 
         num += cards[0]/2
     suspensions.append(num)
-print(num)
+
+for suspension in suspensions:
+    print(suspension)
+
+
