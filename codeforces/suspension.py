@@ -25,6 +25,6 @@ for _ in range(t):
     suspensions.append(num)
 
 for suspension in suspensions:
-    print(suspension)
+    print(int(suspension))
 
 
