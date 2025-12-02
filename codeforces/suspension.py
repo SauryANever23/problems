@@ -15,12 +15,13 @@ for _ in range(t):
     n = int(input())
     num = 0 
     cards = list(map(int, input().split()))
-    num += cards[1]
-    if cards[0] % 2 == 0:
-        num += cards[0]/2 
+    
+    if cards[0] % 2 ==0:
+        if ((cards[0]/2)+cards[1]) < n:
+            num = cards[1] + (cards[0]/2)
     else:
-        cards[0] -= 1 
-        num += cards[0]/2
+        if ((cards[0]-1)/2) + cards[1] < n: 
+            num = cards[1] + ((cards[0]-1)/2)
     suspensions.append(num)
 
 for suspension in suspensions:
