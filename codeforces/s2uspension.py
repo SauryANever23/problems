@@ -12,7 +12,7 @@ for _ in range(t):
         if (cards[0] % 2) == 0:
             num += cards[0]/2
         else:
-            num -= (cards[0]-1)/2
+            num += (cards[0]-1)/2
     suspension.append(num)
 
 for i in suspension:
