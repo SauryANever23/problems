@@ -31,7 +31,9 @@ if (a >= width):
         p = (lenght // a) + 1
 else:
     if lenght % a == 0 and width%a==0:
-        p = (lenght / a) * (width/a) 
+        p = (lenght / a) * (width/a)
+    elif lenght % a == 0 and width % a != 0:
+        p = (lenght/a)*((width//a)+1)
     else:
         p = ((lenght//a)+1)*((width//a)+1)
 print(int(p))
