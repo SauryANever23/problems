@@ -29,8 +29,11 @@ if (a >= width):
         p = lenght / a 
     else:
         p = (lenght // a) + 1
-elif (a < width):
-    pass
+else:
+    if lenght % a == 0:
+        p = (lenght / a) * 2 
+    else:
+        p = ((lenght//a)+1)*2
 print(int(p))
 
 
