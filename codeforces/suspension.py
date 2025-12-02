@@ -19,9 +19,17 @@ for _ in range(t):
     if cards[0] % 2 ==0:
         if ((cards[0]/2)+cards[1]) < n:
             num = cards[1] + (cards[0]/2)
+        elif cards[0]/2 == n:
+            num = cards[0] 
+        elif cards[1] == n:
+            num = cards[1]
     else:
         if ((cards[0]-1)/2) + cards[1] < n: 
             num = cards[1] + ((cards[0]-1)/2)
+        elif (cards[0]-1)/2 == n-1:
+            num = n-1 
+        elif cards[1] == n:
+            num == cards[1]
     suspensions.append(num)
 
 for suspension in suspensions:
