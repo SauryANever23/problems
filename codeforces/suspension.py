@@ -10,9 +10,10 @@
 # 
 
 t = int(input())
-num=0
+suspensions=[]
 for _ in range(t):
     n = int(input())
+    num = 0 
     for i in range(n):
         cards = list(map(int, input().split()))
         num += cards[1]
@@ -21,4 +22,5 @@ for _ in range(t):
         else:
             cards[0] -= 1 
             num += cards[0]/2
+        suspensions.append(num)
 print(num)
