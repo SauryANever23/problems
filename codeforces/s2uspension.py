@@ -8,11 +8,12 @@ for _ in range(t):
     cards = list(map(int, input().split()))
     num = 0 
     num += cards[1]
-    if num < n:
+    if num < n and cards[0] < n:
         if (cards[0] % 2) == 0:
             num += cards[0]/2
         else:
             num += (cards[0]-1)/2
+    
     suspension.append(num)
 
 for i in suspension:
