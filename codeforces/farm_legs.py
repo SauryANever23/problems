@@ -5,13 +5,6 @@
 
 t = int(input())
 
-def fact(n):
-    fac=1
-    while n>=1:
-        fac = fac*n 
-        n-=1 
-    return fac
-
 # combinatinos 
 num = []
 for i in range(t):
