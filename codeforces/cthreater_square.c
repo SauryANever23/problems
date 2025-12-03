@@ -3,12 +3,20 @@
 
 int min(int a, int b)
 {
-  if 
+  if (a>b)
+  {
+    return a;
+  }
+  else 
+  {
+    return b
+  }
 }
 
 int main(void)
 {
   int m,n,a;
   scanf("%d %d %d", &m, &n, &a);
-
+  
+  printf("%d", min(total, a))
 }
