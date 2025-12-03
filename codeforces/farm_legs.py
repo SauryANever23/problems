@@ -15,12 +15,14 @@ def fact(n):
 # combinatinos 
 num = []
 for i in range(t):
-    n = int(input())
-    if n % 2 == 0:
-        config = (fact(n))/((fact(2))*fact(3))
+    legs = int(input())
+    if legs % 2 == 0:
+        chicks = legs/2 
+        cows = legs/4 
+        config = min(chicks, cows)+1
     else:
         config = 0
-    num.append(config)
+    num.append(int(config))
         
 for j in num:
     print(j)
