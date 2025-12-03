@@ -3,13 +3,13 @@
 
 int main(void)
 {
-  int m,n,a;
-  scanf("%d %d %d", &m, &n, &a);
-  int lenght = (m+a-1)/a; 
-  int width = (n+a-1)/a;
+  long long m,n,a;
+  scanf("%lld %lld %lld", &m, &n, &a);
+  long long lenght = (m+a-1)/a; 
+  long long width = (n+a-1)/a;
 
-  int total = lenght * width;
-  printf("%d", total);
+  long long total = lenght * width;
+  printf("%lld\n", total);
 
   return 0;
 }
