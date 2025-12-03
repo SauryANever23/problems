@@ -6,11 +6,11 @@
 t = int(input())
 
 def fact(n):
-    fact=1
-    for i in range(n):
-        fact = fact*i
-    return fact
-
+    fac=1
+    while n>=1:
+        fac = fac*n 
+        n-=1 
+    return fac
 
 # combinatinos 
 num = []
@@ -22,4 +22,5 @@ for i in range(t):
         config = 0
     num.append(n)
         
-        
+for j in num:
+    print(j)
