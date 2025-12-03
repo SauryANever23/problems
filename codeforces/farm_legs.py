@@ -20,7 +20,7 @@ for i in range(t):
         config = (fact(n))/((fact(2))*fact(3))
     else:
         config = 0
-    num.append(n)
+    num.append(config)
         
 for j in num:
     print(j)
