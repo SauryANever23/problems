@@ -1,13 +1,14 @@
 # next round 
 
 n, k = map(int, input().split())
-print(n, k)
 scores = list(map(int, input().split()))
+
+k_pos = scores[k]
 
 count = 0
 for i in scores:
-    if i > k:
-        print(i,k,i>=k)
+    if i >= k_pos:
         count+=1 
+    print(i, k_pos)
 
 print(count)
