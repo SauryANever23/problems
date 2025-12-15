@@ -9,6 +9,5 @@ count = 0
 for i in scores:
     if i >= k_pos:
         count+=1 
-    print(i, k_pos)
 
 print(count)
