@@ -12,3 +12,5 @@ for i in scores:
             count+=1 
 
 print(count)
+
+
