@@ -1,9 +1,7 @@
-# next round 
-
 n, k = map(int, input().split())
 scores = list(map(int, input().split()))
 
-k_pos = scores[k]
+k_pos = scores[k-1]
 
 count = 0
 for i in scores:
