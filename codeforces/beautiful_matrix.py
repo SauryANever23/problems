@@ -21,6 +21,6 @@ for i in range(5):
             arr_indx = i 
             num_indx = j 
 steps = 0 
-steps += abs(2-arr_indx)+abs(2-num_index)
+steps += abs(3-arr_indx)+abs(3-num_index)
 print(steps)
 
