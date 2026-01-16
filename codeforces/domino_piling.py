@@ -13,4 +13,8 @@ Find the maximum number of dominoes, which can be placed under these restriction
 
 m, n = map(int, input().split())
 
+area = (m*n) // 2 
+
+print(area)
+
 

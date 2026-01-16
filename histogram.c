@@ -9,10 +9,18 @@ easy to draw the histogram with the bars horizontal;
 
 #define MAX 200 
 
-int word_separate(char sentence[MAX]);
-void histogram(char *word); 
-
 int main(void)
 {
-  
+  char sentence[MAX];
+  printf("Enter sentence: ");
+  fgets(sentence, MAX, stdin); 
+  int len, i;
+  i = 0;
+  while (sentence[i]!='\0')
+  {
+    len++;
+    i++;
+  }
+
+
 }
