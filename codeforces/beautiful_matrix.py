@@ -14,13 +14,12 @@ for _ in range(5):
     row = list(map(int, input().split()))
     arr.append(row) 
 
-arr_indx, num_index = 0,0
-for i in range(5):
-    for j in range(5):
-        if arr[i][j] == 1: 
-            arr_indx = i 
-            num_indx = j 
-steps = 0 
-steps += abs(3-arr_indx)+abs(3-num_index)
+for indx, rows in enumerate(arr):
+    if 1 in rows: 
+        column = rows.index(1) 
+        row = i  
+
+print(row,column,arr)
+steps = abs(3-row)+abs(3-column)
 print(steps)
 
