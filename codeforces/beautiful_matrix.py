@@ -16,10 +16,9 @@ for _ in range(5):
 
 for indx, rows in enumerate(arr):
     if 1 in rows: 
-        column = rows.index(1) 
-        row = i  
+        column = rows.index(1)+1
+        row = indx+1
 
-print(row,column,arr)
 steps = abs(3-row)+abs(3-column)
 print(steps)
 
