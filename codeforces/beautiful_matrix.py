@@ -20,5 +20,7 @@ for i in range(5):
         if arr[i][j] == 1: 
             arr_indx = i 
             num_indx = j 
-
+steps = 0 
+steps += abs(2-arr_indx)+abs(2-num_index)
+print(steps)
 
