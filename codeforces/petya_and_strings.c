@@ -10,6 +10,7 @@ If the first string is less than the second one, print "-1". If the second strin
 
 #include <stdio.h> 
 #include <string.h> 
+#include <ctype.h> 
 
 #define MAX 100 
 
@@ -18,11 +19,11 @@ int main(void)
   char str1[MAX], str2[MAX];
   scanf("%s\n%s", str1, str2);
   
-  len = strlen(str1); 
-  for (int i = 0; str[i] != '\0'; i++) 
+  int len = strlen(str1); 
+  for (int i = 0; str1[i] != '\0'; i++) 
   {
     str1[i] = tolower((unsigned char)str1[i]);
-    ste2[i] = tolower((unsigned char)str2[i]);
+    str2[i] = tolower((unsigned char)str2[i]);
   }
 
   int change = 0;
