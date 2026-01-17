@@ -19,17 +19,32 @@ int main(void)
   scanf("%s\n%s", str1, str2);
   
   len = strlen(str1); 
+  for (int i = 0; str[i] != '\0'; i++) 
+  {
+    str1[i] = tolower((unsigned char)str1[i]);
+    ste2[i] = tolower((unsigned char)str2[i]);
+  }
+
   int change = 0;
   for (int i = 0; i < len; i++)
   {
-    if (str1[i]-str2[i]==0 || str1[i]-str2[i]==32 || str1[i]-str2[i]==-32)
+    int val = str1[i]-str2[i];
+    if (val==0)
     {
-      change = 0;
+      change = 0;   
     }
-    
-
+    else if (val>0)
+    {
+      change = 1;
+      break;
+    }
+    else if (val < 0)
+    {
+      change = -1;
+      break;
+    }
   }
-  
+  printf("%d\n",change);
   return 0;
 }
 
