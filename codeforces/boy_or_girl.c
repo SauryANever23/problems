@@ -26,9 +26,10 @@ int main(void)
     {
       if (str[i]!=str[j])
       {
-        count++;
+        unq_str[i]=str[i];
       }
     }
   }
-  printf("%d", count);
+  printf("%s\n", unq_str);
+  printf("%ld", strlen(unq_str));
 }
