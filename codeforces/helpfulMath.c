@@ -58,6 +58,7 @@ int main(void)
       printf("%d",arr[i]);
     }
   }
+  printf("\n");
 
   return 0;
 }
