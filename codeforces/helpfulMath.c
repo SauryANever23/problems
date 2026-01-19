@@ -11,11 +11,42 @@ The first line contains a non-empty string s — the sum Xenia needs to count. S
 Output
 Print the new sum that Xenia can count.
 */
-
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h> 
+#include <string.h>
+
+#define MAX 100
 
 int main(void)
 {
+  char str[100]; 
+  scanf("%s",str[100]); 
+
+  int arr[MAX];
+
+  for (int i = 0; str[i]!='\0'; i++)
+  {
+    if (str[i]!="+")
+    {
+      arr[i]=atoi(str[i]);
+    }
+  }
+  
+  size_t len = sizeof(arr) / sizeof(arr[0]);
+  for (int i = 0; i < len; i++)
+  {
+    if (i < (len-1))
+    {
+      if (arr[i] > arr[i+1])
+      {
+        int prev = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = prev;
+      }
+    }
+  }
+  
+
   return 0;
 }
