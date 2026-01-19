@@ -21,13 +21,9 @@ int main(void)
   char unq_str[MAX];
   for (int i = 0; str[i]!='\0';i++)
   {
-    
-    for (int j = 0; j < strlen(str);j++)
+    for (int j = 0; j < strlen(str); j++)
     {
-      if (str[i]!=str[j])
-      {
-        unq_str[i]=str[i];
-      }
+       
     }
   }
   printf("%s\n", unq_str);
