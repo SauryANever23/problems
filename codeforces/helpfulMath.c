@@ -20,16 +20,16 @@ Print the new sum that Xenia can count.
 
 int main(void)
 {
-  char str[100]; 
+  char str[MAX]; 
   scanf("%s",str); 
 
   int arr[MAX];
 
   for (int i = 0; str[i]!='\0'; i++)
   {
-    if (strcmp(str[i],"+")==0)
+    if (str[i]=='+')
     {
-      arr[i]=atoi(str[i]);
+      arr[i]=str[i]-'0';
     }
   }
   
