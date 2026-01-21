@@ -27,7 +27,7 @@ int main(void)
 
   for (int i = 0; str[i]!='\0'; i++)
   {
-    if (str[i]=='+')
+    if (str[i]!='+')
     {
       arr[i]=str[i]-'0';
     }
