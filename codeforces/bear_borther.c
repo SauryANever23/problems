@@ -19,5 +19,18 @@ Print one integer, denoting the integer number of years after which Limak will b
 
 int main(void)
 {
+  int a, b; 
+  scanf("%d %d", &a, &b); 
+  int count=0;
+  
+  while (a <= b)
+  {
+    a *= 3; 
+    b *= 2;
+    count++;
+  }
+
+  printf("%d\n", count);
+
   return 0;
 }
