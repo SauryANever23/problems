@@ -51,11 +51,11 @@ int main(void)
   {
     if (i < len-1)
     {
-      printf("%d+",arr[i]);
+      printf("%d+", arr[i]);
     }
-    else 
+    else
     {
-      printf("%d",arr[i]);
+      printf("%d\n",arr[i]);  
     }
   }
   printf("\n");
