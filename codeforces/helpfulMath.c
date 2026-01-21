@@ -22,7 +22,7 @@ int main(void)
 {
   char str[MAX]; 
   scanf("%s",str); 
-
+  size_t len=0;
   int arr[MAX];
 
   for (int i = 0; str[i]!='\0'; i++)
@@ -30,19 +30,19 @@ int main(void)
     if (str[i]!='+')
     {
       arr[i]=str[i]-'0';
+      len++;
     }
   }
-  
-  size_t len = sizeof(arr) / sizeof(arr[0]);
-  for (int i = 0; i < len; i++)
+  // bubble sort 
+  for (int i = 0; i < len-1; i++)
   {
-    if (i < (len-1))
+    for (int j = 0; j < len-1; j++)
     {
-      if (arr[i] > arr[i+1])
+      if (arr[j]>arr[j+1])
       {
-        int prev = arr[i];
-        arr[i] = arr[i+1];
-        arr[i+1] = prev;
+        int prev = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = prev;
       }
     }
   }
