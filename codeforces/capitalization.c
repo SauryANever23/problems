@@ -19,7 +19,7 @@ int main(void)
 {
   char str[MAX]; 
   scanf("%s", str); 
-  if (str[0] <= 97 || str[0] >= 122)
+  if (str[0] >= 97)
   {
     str[0] = str[0]-32;
   }
