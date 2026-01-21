@@ -12,5 +12,15 @@ Print the minimum number of steps that elephant needs to make to get from point 
 
 int main(void)
 {
+  int x; 
+  int home=0;
+  scanf("%d", &x); 
+  int steps=0; 
+  while (home<x)
+  {
+    home+=5;
+    steps++;
+  }
+  printf("%d\n", steps);
   return 0;
 }
