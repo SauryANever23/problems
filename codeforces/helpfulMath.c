@@ -29,15 +29,15 @@ int main(void)
   {
     if (str[i]!='+')
     {
-      arr[i]=str[i]-'0';
+      arr[len]=str[i]-'0';
       len++;
     }
   }
  
   // Bubble sort to sort the array
-  for (int i = 0; i < count - 1; i++)
+  for (int i = 0; i < len - 1; i++)
   {
-    for (int j = 0; j < count - 1 - i; j++)
+    for (int j = 0; j < len - 1 - i; j++)
     {
       if (arr[j] > arr[j + 1])
       {
