@@ -14,5 +14,22 @@ Print a single integer — the answer to the problem.
 
 int main(void)
 {
+  int n; 
+  scanf("%d",&a);
+  
+  char str[n];
+  int count=0, i=0;
+  while (str[i]!=str[i+1])
+  {
+    i++;
+    count++; 
+    if (count >= n-1)
+    {
+      break;
+    }
+  }
+  
+  printf("%d\n", count);
+
   return 0;
 }
