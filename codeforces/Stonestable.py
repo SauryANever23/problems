@@ -14,9 +14,9 @@ n = int(input())
 s = input()
 count = 0
 i = 0
-while s[i] != s[i+1]:
+while s[i] == s[i+1]:
     count += 1 
     i += 1 
-    if i == n:
+    if i >= n-1:
         break 
 print(count)
