@@ -20,9 +20,7 @@ count = 0
 #     if i >= n-1:
 #         break
 
-for i in range(n):
-    if i >= n-1:
-        break
+for i in range(n-1):
     if s[i] == s[i+1]:
         count += 1 
 print(count)

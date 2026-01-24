@@ -20,8 +20,12 @@ int main(void)
   char str[n];
   int count=0, i=0;
   
-  for (i = 0; i < n-1; i++)
+  for (i = 0; i < n; i++)
   {
+    if (i >= n-1)
+    {
+      break;
+    }
     if (str[i]==str[i+1])
     {
       count++;
