@@ -19,13 +19,12 @@ int main(void)
   
   char str[n];
   int count=0, i=0;
-  while (str[i]!=str[i+1])
+  
+  for (i = 0; i < n-1; i++)
   {
-    count++;
-    i++;
-    if (count >= n-1)
+    if (str[i]==str[i+1])
     {
-      break;
+      count++;
     }
   }
 
