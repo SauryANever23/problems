@@ -16,8 +16,26 @@ Print the resulting string. It is guaranteed that this string is not empty.
  */
 
 #include <stdio.h> 
+#include <string.h>
+#include <ctype.h>
+
+#define MAX 100
 
 int main(void)
 {
+  char str[MAX];
+  scanf("%s", str); 
+  char spare[MAX];
+  char final[MAX];
+  strcpy(spare, str);
+  for (int i = 0; i <= strlen(str); i++)
+  {
+    if (tolower(str[i]) != 'a' || tolower(str[i]) != 'e' || tolower(str[i]) != 'i' || tolower(str[i]) != 'o' || tolower(str[i]) != 'u' || tolower(str[i]) != 'y')
+    {
+      final[i] = "."+str[i]
+    }
+  }
+  printf("%s\n", final);
+
   return 0;
 }
