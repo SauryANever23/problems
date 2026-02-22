@@ -32,7 +32,8 @@ int main(void)
   {
     if (tolower(str[i]) != 'a' || tolower(str[i]) != 'e' || tolower(str[i]) != 'i' || tolower(str[i]) != 'o' || tolower(str[i]) != 'u' || tolower(str[i]) != 'y')
     {
-      final[i] = "."+str[i];
+      strcpy(final[i], ".");
+      strcpy(final[i+1], str[i]);
     }
   }
   printf("%s\n", final);
