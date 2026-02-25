@@ -23,7 +23,7 @@ n_t = n
 final = ""
 for i in range(len(n)):
     if n[i].lower() not in vowels:
-        final = "."+n[i]
+        final += "."+n_t[i]
 print(final) 
 
         
