@@ -1,6 +1,6 @@
 #include <stdio.h> 
-#include <ctype.h> 
 #include <stdlib.h> 
+#include <time.h> 
 
 typedef enum {
   false,
@@ -25,13 +25,19 @@ boolean is_perfect(int n)
 int main(int argc, char **argv)
 {
   int range = atoi(argv[1]);
+  clock_t start = clock();
   for (int i = 1; i <= range; i++)
   {
     if (is_perfect(i))
     {
-      printf("%d/n", i);
+      printf("%d\n", i);
     }
   }
+  clock_t end = clock();
+
+  double time_spent = (double) end - start/ CLOCKS_PER_SEC; 
+
+  printf("TIme Spent: %f seconds\n", time_spent);
 
   return 0;
 }
