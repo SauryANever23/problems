@@ -2,7 +2,13 @@
 #include <ctype.h> 
 #include <stdlib.h> 
 
-bool is_perfect(int n)
+typedef enum {
+  false,
+  true
+}
+boolean;
+
+boolean is_perfect(int n)
 {
   int sum = 0; 
   for (int i = 1; i < n; i++)
@@ -12,11 +18,8 @@ bool is_perfect(int n)
       sum += i;
     }
   }
-
-  if (sum == n)
-  {
-    return true;
-  }
+  
+  return (sum == n);
 }
 
 int main(int argc, char **argv)
@@ -26,7 +29,9 @@ int main(int argc, char **argv)
   {
     if (is_perfect(i))
     {
-      puts(i);
+      printf("%d/n", i);
     }
   }
+
+  return 0;
 }
