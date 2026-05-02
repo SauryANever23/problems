@@ -1,64 +1,63 @@
 """
-Yousef has given you an array 𝑎
- of 𝑛
- positive integers.
+Yousef has given you a sequence 𝑠
+ of length 𝑛
+ consisting only of characters '(
+' and ')
+'. You are allowed to perform the following operation at most once:
 
-Let 𝑓(𝑎)
- denote the number of subarrays∗
- of 𝑎
- whose product is divisible by 6
-.
-
-More formally, for every pair of indices 𝑙
- and 𝑟
- such that 1≤𝑙≤𝑟≤𝑛
-, consider the subarray 𝑎𝑙,𝑎𝑙+1,…,𝑎𝑟
-. This subarray is counted if the product of its elements is divisible by 6
-.
-
-For example, if 𝑎=[1,6,2]
-, then the subarrays whose products are divisible by 6
- are [6]
-, [1,6]
-, [6,2]
-, and [1,6,2]
-, so 𝑓(𝑎)=4
-.
-
-Your task is to reorder the elements of the array 𝑎
- so that 𝑓(𝑎)
- is minimized. If there are multiple ways to do this, you may output any of them.
+Choose a substring∗
+ of 𝑠
+ and remove it. Then, you may reinsert the removed characters back into the remaining string one by one. Each character can be placed at any arbitrary position, independently of the others.
+Yousef wants you to determine whether it is possible to obtain a regular bracket sequence†
+ after performing the operation at most once.
 
 ∗
-An array 𝑏
- is a subarray of an array 𝑎
- if 𝑏
- can be obtained from 𝑎
- by deleting several (possibly zero or all) elements from the beginning and several (possibly zero or all) elements from the end.
+A substring is a contiguous subsegment of a string. For example, "acab" is a substring of "abacaba" (it starts in position 3
+ and ends in position 6
+), but "aa" or "d" aren't substrings of this string. So the substring of the string 𝑠
+ from position 𝑙
+ to position 𝑟
+ is 𝑠[𝑙,𝑟]=𝑠𝑙𝑠𝑙+1…𝑠𝑟
+.
 
+†
+A regular bracket sequence is a bracket sequence that can be transformed into a correct arithmetic expression by inserting the characters 1
+ and +
+ between the original characters of the sequence. For example:
+
+bracket sequences ()()
+ and (())
+ are regular (the resulting expressions are: (𝟷)+(𝟷)
+ and ((𝟷+𝟷)+𝟷)
+);
+bracket sequences )(
+, (
+ and )
+ are not.
 Input
-The first line of the input contains an integer 𝑡
+The first line contains an integer 𝑡
  (1≤𝑡≤104
-) — the number of test cases.
+) — the number of test cases. The descriptions of the test cases follow.
 
-The first line of each test case contains an integer 𝑛
+The first line of each test case contains a single integer 𝑛
  (1≤𝑛≤2⋅105
-) — the size of the array.
+) — the length of the string 𝑠
+.
 
-The second line of each test case contains 𝑛
- integers 𝑎1,𝑎2,…,𝑎𝑛
- (1≤𝑎𝑖≤109
-) — the elements of the array.
+The second line of each test case contains a sequence 𝑠
+ of length 𝑛
+ consisting only of characters '(
+' and ')
+'.
 
 It is guaranteed that the sum of 𝑛
  over all test cases does not exceed 2⋅105
 .
 
 Output
-For each test case, output the array after reordering it in such a way that 𝑓(𝑎)
- is minimized. If there are multiple answers, you may output any of them.
+For each test case, output "YES" if the sequence can be made regular, and "NO" otherwise.
 
-
+You can output the answer in any case (upper or lower). For example, the strings "yEs", "yes", "Yes", and "YES" will be recognized as positive responses.
 """
 t = int(input())
 

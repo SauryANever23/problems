@@ -18,12 +18,9 @@ Print the resulting string. It is guaranteed that this string is not empty.
 n = input()
 vowels = ['a', 'e', 'i', 'o', 'u', 'y']
 
-n_t = n 
+n_l = list(n)
 
-final = ""
-for i in range(len(n)):
-    if n[i].lower() not in vowels:
-        final += "."+n_t[i]
-print(final) 
+nne = "".join(["."+w.lower() for w in n_l if w.lower() not in vowels])
 
+print(nne)
         
