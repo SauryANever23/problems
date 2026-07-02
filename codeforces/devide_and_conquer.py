@@ -8,7 +8,7 @@ for i in range(t):
 
 for val in vals:
     x, y = val 
-    if max(x, y) % min(x, y) == 0: 
+    if x % y == 0: 
         print("YES")
     else:
         print("NO")
