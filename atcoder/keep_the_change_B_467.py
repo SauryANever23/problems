@@ -6,11 +6,11 @@ for i in range(n):
     a, b, s = input().split()
     A, B = int(a), int(b)
     if s == 'take':
-        total -= (B-A)
+        total -= A
     else:
-        total -= B 
+        total -= B
 
-    last -= (B-A)
+    last -= A
 
 print(last - total)
 
