@@ -17,19 +17,14 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(tc: str):
-    # digits = set(list(tc))
-    lucky_numbers = [i for i in tc if i=='4' or i=='7']
-    if (len(lucky_numbers)==4 or len(lucky_numbers)==7):
-        print("YES")
-    else:
-        print("NO")
+def solve(tc: int):
+    
 
 def main():
     try:
         t = 1
         for tc in range(1, t+1):
-            solve(insr())
+            solve(tc)
     except (ValueError, IndexError):
         pass 
 
