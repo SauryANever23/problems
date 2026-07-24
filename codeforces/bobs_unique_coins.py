@@ -17,20 +17,18 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(s: str):
-    if int(s[0]) + int(s[2]) == int(s[1]) or int(s[1]) == int(s[2]):
-        result = "YES"
-    else:
-        result = "NO"
-    return result 
+def solve(tc: list):
+    l1 = len(tc)
+    count = 0
+    
 
 def main():
     try:
-        t = 1
-        for _ in range(1, t+1):
-            print(solve(insr()))
+        n = inp()
+        arr = init()
+        print(solve(arr))
     except (ValueError, IndexError):
-        print(e)
+        pass 
 
 if __name__ == '__main__':
     main()

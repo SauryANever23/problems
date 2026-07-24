@@ -17,20 +17,20 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(s: str):
-    if int(s[0]) + int(s[2]) == int(s[1]) or int(s[1]) == int(s[2]):
-        result = "YES"
+def solve(tc: str):
+    digits = set(list(tc))
+    if len(digits) == 2 and '4' in digits and '7' in digits:
+        print("YES")
     else:
-        result = "NO"
-    return result 
+        print("NO")
 
 def main():
     try:
         t = 1
-        for _ in range(1, t+1):
-            print(solve(insr()))
+        for tc in range(1, t+1):
+            solve(insr())
     except (ValueError, IndexError):
-        print(e)
+        pass 
 
 if __name__ == '__main__':
     main()
