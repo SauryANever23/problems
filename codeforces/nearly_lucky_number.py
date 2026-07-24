@@ -19,7 +19,7 @@ def invr():     return map(int, input().split())
 
 def solve(tc: str):
     digits = set(list(tc))
-    if len(digits) == 2 and '4' in digits and '7' in digits:
+    if (len(digits) == 2) and '4' in digits and '7' in digits and (len(list(tc))==4 or len(list(tc))==7):
         print("YES")
     else:
         print("NO")
