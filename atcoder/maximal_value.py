@@ -19,7 +19,7 @@ def invr():     return map(int, input().split())
 
 def solve(n: int, a: list):
     count = 0
-    for i in range(1, n-2):
+    for i in range(n-2):
         if a[i+1] > a[i] and a[i+1] > a[i+2]: 
             count += 1
     return count 
