@@ -20,19 +20,16 @@ def invr():     return map(int, input().split())
 def solve(m: int, d: int, s: str):
     cells = list(s)
     watched = [False for i in range(m)]
-    left = max(0, i-d)
-    right = min(m-1, i+d)
     
     for i in range(m):
         if cells[i] == 'G':
-            watched[i] = True 
-            watched[i+right] = True 
-            watched[i+left] =True 
+            left = max(0, i-d)
+            right = min(m-1, i+d)
+        
+            for j in range(left, right+1):
+                watched[j] = True
 
-    count = 0
-    for i in count:
-        if not i: 
-            count += 1 
+    count = watched.count(False)
     return count 
 
     
