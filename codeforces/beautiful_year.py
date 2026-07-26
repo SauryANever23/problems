@@ -22,7 +22,7 @@ def is_distinct(n: int):
         return True
     return False
 
-def solve(n: str):
+def solve(n: int):
     # what is a beautiful year? 
     # any year with all distince numbers 
     # give a year, take the first three letters 
@@ -35,7 +35,7 @@ def solve(n: str):
 
 def main():
     try:
-        n = input()
+        n = inp()
         print(solve(n))
     except (ValueError, IndexError):
         pass 
