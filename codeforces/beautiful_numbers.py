@@ -40,41 +40,35 @@ def solve(n: str):
     
     steps = 0
     
-    nums = list(map(int, list(n)))
-
-    s_nums = sorted(nums, reverse=True)
+    # using the greedy approach 
+    # checking how much a number is reducable 
     
-    obj_count = 0 
-    i = 0
-    while True: 
-        
-        # sum_s_nums = str(sum(s_nums))
-        
-        if sum(s_nums) < 10:
-            return steps 
-        if i >= len(s_nums):
-            return steps 
-        
-        if s_nums.count(nums[0]) > 1: 
-            if s_nums[i] == nums[0] and obj_count < 1: 
-                obj_count += 1
-            else: 
-                s_nums[i] = 0 
-                steps += 1 
+    reduce = []
 
-        else: 
-            if s_nums[i] != nums[0]:
-                s_nums[i] = 0
-                steps += 1
-        i += 1 
+    nums = list(map(int, list(n)))
+    
+    current_sum = sum(nums)
 
+    if current_sum <= 9: 
+        return 0 
+
+    reduce.append(nums[0]-1)
+    
+    for d in nums[1:]:
+        recude.append(d)
+
+    for re in reduce: 
+        current_sum -= re 
+        steps += 1
+        if current_sum <= 9: 
+            return steps 
     
 def main():
     try:
         t = int(input())
         soln = []
         for tc in range(1, t+1):
-            a = input()
+            a = input().strip()
             soln.append(solve(a))
 
         for s in soln: 
