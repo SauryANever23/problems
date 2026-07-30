@@ -37,7 +37,7 @@ def solve(n: str):
     
     nums = list(map(int, list(n)))
 
-    s_nums = sorted(nums)
+    s_nums = sorted(nums, reverse=True)
     obj_count = 0 
     i = 0
     while True: 
@@ -62,10 +62,11 @@ def solve(n: str):
     
 def main():
     try:
-        t = inp()
+        t = int(input())
         soln = []
         for tc in range(1, t+1):
-            soln.append(solve(input()))
+            a = input()
+            soln.append(solve(a))
 
         for s in soln: 
             print(s)
@@ -73,7 +74,6 @@ def main():
         pass 
 
 if __name__ == '__main__':
-    main()
-
+    main() 
 
 
