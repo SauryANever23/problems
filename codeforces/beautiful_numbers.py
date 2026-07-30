@@ -38,15 +38,25 @@ def solve(n: str):
     nums = list(map(int, list(n)))
 
     s_nums = sorted(nums)
+    obj_count = 0 
     i = 0
     while True: 
-        if sum(nums) == sum(list(map(int, list(''.join(s_nums))))):
+        
+        if sum(s_sums) < 10:
             return steps 
         if i >= len(s_nums):
             return steps 
-        if s_nums[i] != nums[0]:
-            s_nums[i] = 0 
-            steps += 1 
+        
+        if s_nums.count(nums[0]) > 1: 
+            if s_nums[i] == nums[0] and obj_count < 1: 
+                obj_count += 1
+            else: 
+                s_nums[i] = 0 
+                steps += 1 
+        else: 
+            if s_nums[i] != nums[0]:
+                s_nums[i] = 0 
+                steps += 1
         i += 1 
 
     
