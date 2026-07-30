@@ -17,6 +17,9 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
+
+
+
 def solve(n: str):
     """
     F(x) = sum of digits of the number x 
@@ -33,16 +36,21 @@ def solve(n: str):
     basically change the digits such that thier sums are single digit 
     
     """ 
+ 
+    
     steps = 0
     
     nums = list(map(int, list(n)))
 
     s_nums = sorted(nums, reverse=True)
+    
     obj_count = 0 
     i = 0
     while True: 
         
-        if sum(s_sums) < 10:
+        # sum_s_nums = str(sum(s_nums))
+        
+        if sum(s_nums) < 10:
             return steps 
         if i >= len(s_nums):
             return steps 
@@ -53,9 +61,10 @@ def solve(n: str):
             else: 
                 s_nums[i] = 0 
                 steps += 1 
+
         else: 
             if s_nums[i] != nums[0]:
-                s_nums[i] = 0 
+                s_nums[i] = 0
                 steps += 1
         i += 1 
 
@@ -74,6 +83,5 @@ def main():
         pass 
 
 if __name__ == '__main__':
-    main() 
-
+    main()
 
