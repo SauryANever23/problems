@@ -17,51 +17,33 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-
-
-
 def solve(n: str):
-    """
-    F(x) = sum of digits of the number x 
-    x is beautiful if 
+    digits = list(map(int, n))
 
-    F(F(x)) = F(x)
+    current_sum = sum(digits)
 
-    which numebrs are beautiful? 
-    -> single digit numbers 
-    
-    37 - not beautiful 
-    replae 7 with 3 or 2 or 1 , we get a beautiful number, 
+    if current_sum <= 9:
+        return 0
 
-    basically change the digits such that thier sums are single digit 
-    
-    """ 
- 
-    
+    reductions = []
+
+    # Leading digit: d -> 1
+    reductions.append(digits[0] - 1)
+
+    # Other digits: d -> 0
+    for d in digits[1:]:
+        reductions.append(d)
+
+    reductions.sort(reverse=True)
+
     steps = 0
-    
-    # using the greedy approach 
-    # checking how much a number is reducable 
-    
-    reduce = []
 
-    nums = list(map(int, list(n)))
-    
-    current_sum = sum(nums)
-
-    if current_sum <= 9: 
-        return 0 
-
-    reduce.append(nums[0]-1)
-    
-    for d in nums[1:]:
-        recude.append(d)
-
-    for re in reduce: 
-        current_sum -= re 
+    for reduction in reductions:
+        current_sum -= reduction
         steps += 1
-        if current_sum <= 9: 
-            return steps 
+
+        if current_sum <= 9:
+            return steps
     
 def main():
     try:

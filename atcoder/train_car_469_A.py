@@ -17,21 +17,20 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(size: list, arrs: list) -> bool:
-    valid_count=0
-    for i in range(len(size)):
-         
+def solve(n: int, k: int):
+    train = [0 for i in range(n)]
+    x = 0 
+    for i in range(n, k, -1):
+        x += 1 
+    return x
+        
 
 def main():
     try:
-        t = inp()
-        size = []
-        arrs = []
-        for _ in range(1, t+1):
-            size.append(inp())
-            arrs.append(init())
-
-
+        t = 1
+        for tc in range(1, t+1):
+            n, k = invr()
+            print(solve(n, k))
     except (ValueError, IndexError):
         pass 
 
