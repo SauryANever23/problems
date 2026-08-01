@@ -18,12 +18,7 @@ def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
 def solve(n: int, k: int):
-    train = [0 for i in range(n)]
-    x = 0 
-    for i in range(n, k, -1):
-        x += 1 
-    return x
-        
+    return (n-k)+1        
 
 def main():
     try:
