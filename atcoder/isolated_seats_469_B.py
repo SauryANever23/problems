@@ -32,17 +32,21 @@ def solve_failed(n: int, s: str):
 def solve(n: int, s: str):
     count = 0 
     # for the middle elements
-    for i in range(1, n-2):
-        if s[i] == 'x' and s[i+1] == 'x' and s[i-1] == 'x':
+    if n != 1:
+        for i in range(1, n-1):
+            if s[i] == 'x' and s[i+1] == 'x' and s[i-1] == 'x':
+                count += 1 
+
+        # for the border elemnt
+        if s[0] == 'x' and s[1] == 'x':
             count += 1 
 
-    # for the border elemnt
-    if s[0] == 'x' and s[1] == 'x':
-        count += 1 
-
-    # for right element
-    if s[n-1] == 'x' and s[n-2] == 'x':
-        count += 1
+        # for right element
+        if s[n-1] == 'x' and s[n-2] == 'x':
+            count += 1
+    else:
+        if s == 'x':
+            count += 1
 
     return count
 def main():
