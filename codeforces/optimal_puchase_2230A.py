@@ -17,7 +17,7 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(n,a,b):
+def solve_1(n,a,b):
     if b <= a: 
         cost = (n // 3)*b 
         n = n % 3 
@@ -34,12 +34,14 @@ def solve(n,a,b):
             cost = (n//3)*b 
             n = n % 3 
             if n % 2 == 0: 
+                
                 if 2*a >= b: 
                     cost += (n//2)*b 
                     n = n%2 
-                else: 
-                    cost += (n//2)*a 
+                else:
+                    cost += (n)*a
                     n = n%2 
+                    return cost 
             else: 
                 cost += a 
                 n -= 1 
@@ -49,7 +51,19 @@ def solve(n,a,b):
             cost = (n)*a 
             return cost 
         
-        
+def solve(n, a, b):
+    """
+    a more optimum solution
+    we devide the students inot group sof 3 
+    we get g = n // 3 
+    and some remaning as d = n % 3 
+    
+    then the operations that we can apply on that 
+    """
+
+    g = n // 3 
+    d = n % 3 
+    return min(n*a, b*g+a*d, (g+1)*b)
 
 
 def main():
