@@ -17,33 +17,14 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(n: int, s: str):
-    count = 0 
-    # for the middle elements
-    if n != 1:
-        for i in range(1, n-1):
-            if s[i] == 'x' and s[i+1] == 'x' and s[i-1] == 'x':
-                count += 1 
+def solve(tc: int):
+    
 
-        # for the border elemnt
-        if s[0] == 'x' and s[1] == 'x':
-            count += 1 
-
-        # for right element
-        if s[n-1] == 'x' and s[n-2] == 'x':
-            count += 1
-    else:
-        if s == 'x':
-            count += 1
-
-    return count
 def main():
     try:
-        t = 1
+        t = inp()
         for tc in range(1, t+1):
-            n = inp()
-            s = insr()
-            print(solve(n, s))
+            print(solve(insr()))
     except (ValueError, IndexError):
         pass 
 
