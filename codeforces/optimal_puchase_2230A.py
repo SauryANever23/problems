@@ -31,7 +31,7 @@ def solve(n,a,b):
         return cost 
     else: 
         if 3*a >= b: 
-            cost = (n//2)*b 
+            cost = (n//3)*b 
             n = n % 3 
             if n % 2 == 0: 
                 if 2*a >= b: 
@@ -46,11 +46,7 @@ def solve(n,a,b):
                 cost += (n//2)*min(a, b) 
             return cost
         else: 
-            cost = (n//3)*a 
-            n = n % 3 
-            cost += (n//2)*a 
-            n = n % 2 
-            cost += a 
+            cost = (n)*a 
             return cost 
         
         
