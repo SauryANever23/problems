@@ -17,21 +17,24 @@ def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
-def solve(s: str):
-    s_l = list(map(int, s.split()))
-    for i in range(len(s)):
-        for j in range(i):
-            if int(s[i:j]) % 4 == 0: 
-                s_l.pop(j)
-    return len(s) - len(s_l)
+def solve(a,b,c):
+
+    mx = max(a,b,c)
+    mn = min(a,b,c)
+    vals = [a,b,c]
+    vals.remove(mx)
+    vals.remove(mn)
+    md = vals[0]
+    if len(set([a,b,c])) <= 2: 
+        return 0
+        
+    return min(mx-md, md-mn)
 
 def main():
-    try:
-        t = inp()
-        for tc in range(1, t+1):
-            solve(input().strip())
-    except (ValueError, IndexError):
-        pass 
+    t = inp()
+    for tc in range(1, t+1):
+        a,b,c = invr()
+        print(solve(a,b,c))
 
 if __name__ == '__main__':
     main()

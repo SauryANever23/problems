@@ -21,17 +21,16 @@ def solve(s: str):
     s_l = list(map(int, s))
     for i in range(len(s)):
         for j in range(i):
-            if int(s[i:j]) % 4 == 0: 
-                s_l.pop(j)
+            for k in range(j):
+                if len(s[k:j]) != 0 and s_l[k:j][0] % 4 == 0: 
+                    s_l.pop(k)
+                    
     return len(s) - len(s_l)
 
 def main():
-    try:
-        t = inp()
-        for tc in range(1, t+1):
-            print(solve(insr()))
-    except (ValueError, IndexError):
-        pass 
+    t = inp()
+    for tc in range(1, t+1):
+        print(solve(insr()))
 
 if __name__ == '__main__':
     main()
