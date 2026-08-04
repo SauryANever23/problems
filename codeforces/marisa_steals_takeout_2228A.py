@@ -20,11 +20,16 @@ def invr():     return map(int, input().split())
 def solve(n: int, w: list):
     count = 0 
     count += w.count(0)
+    w = [i for i in w if i != 0]
     n1 = w.count(2)
     n2 = w.count(1)
     count += min(n1, n2)
-    count += (max(n1, n2)-min(n1,n2))//3 if (max(n1,n2)-min(n1,n2)%2==0) else 0
+    for i in range(min(n1,n2)):
+        w.remove(1)
+        w.remove(2)
+    count += len(w) // 3
     return count 
+
 
 def main():
     try:
