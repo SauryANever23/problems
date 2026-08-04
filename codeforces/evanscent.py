@@ -15,46 +15,56 @@ def print(*args, sep=" ", end="\n"):
 def inp():      return int(input())
 def init():     return list(map(int, input().split()))
 def insr():     return input().strip()
-def invr():     return map(int, input().split()
+def invr():     return map(int, input().split())
+
+def solve_2(n, s):
+    runs = 1
+    for i in range(1, n):
+        if s[i] != s[i - 1]:
+            runs += 1
+
+    ans = runs
+
+    for i in range(1, n - 1):
+        cur = runs
+
+        # deleting a single-character block
+        if s[i] != s[i - 1] and s[i] != s[i + 1]:
+            cur -= 1
+
+            # merge two equal neighboring blocks
+            if s[i - 1] == s[i + 1]:
+                cur -= 1
+
+        ans = min(ans, cur)
+
+    return ans
 
 def solve(n, s):
+    nls = list(s)
+    nls.pop()
+    nls.remove(s[0])
     if n == 0:
         return 0
     cnt = []
-    or_s = dict.fromkeys(s)
-    un_s = list(pr_s)
-    for i in range(1, len(un_s)):
-        cnt.append((un_s[i], un_s.count(un_s[i])))
-    min_pair = min(un_s)
-    val, count = min_pair 
+    or_s = dict.fromkeys(nls)
+    un_s = list(or_s)
+    for i in range(0, len(un_s)):
+        cnt.append((un_s[i], nls.count(un_s[i])))
+    val, count = min(cnt)
     ls = list(s)
-    if ls.index(val) != 1 or ls.index(val) != n: 
-        ls.remove(val)
-    else: 
-        un_s.remove(min_pair)
-        min_pair = min(un_s) 
-        val, count = min_pair 
-        ls.remove(val)
+    ls.remove(val)
+    ls = list(s[0])+list(s)+list(s[n-1])
     # now for lenght of compressed string 
     s = ''.join(ls) 
-    new = []
-    for i in range(1, n): 
-        for j in range(i):
-            if len(set(s[i:j])) == 1: 
-                new.append(s[i]) 
+    return len(set(s))
 
-    return len(new)
-
-        
 def main():
-    try:
-        t = inp()
-        for tc in range(1, t+1):
-            n = int(input())
-            s = insr()
-            print(solve(n, s))
-    except (ValueError, IndexError):
-        pass 
+    t = inp()
+    for tc in range(1, t+1):
+        n = int(input())
+        s = input().strip()
+        print(solve(n, s))
 
 if __name__ == '__main__':
     main()
