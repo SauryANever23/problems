@@ -18,7 +18,7 @@ def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
 def solve(s: str):
-    s_l = list(map(int, s))
+    s_l = list(map(int, s.split()))
     for i in range(len(s)):
         for j in range(i):
             if int(s[i:j]) % 4 == 0: 
@@ -29,7 +29,7 @@ def main():
     try:
         t = inp()
         for tc in range(1, t+1):
-            print(solve(insr()))
+            solve(input().strip())
     except (ValueError, IndexError):
         pass 
 
