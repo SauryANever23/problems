@@ -40,7 +40,7 @@ def solve_2(n, s):
 
     return ans
 
-def solve(n, s):
+def solve_3(n, s):
     nls = list(s)
     nls.pop()
     nls.remove(s[0])
@@ -58,6 +58,9 @@ def solve(n, s):
     # now for lenght of compressed string 
     s = ''.join(ls) 
     return len(set(s))
+
+def solve(n, s): 
+    
 
 def main():
     t = inp()

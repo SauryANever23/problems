@@ -6,7 +6,7 @@ Max subarray sum using different algorytms in python
 import time 
 import sys 
 
-def max_subarray_sum(arr: list) -> tuple: 
+def max_subarray_sum_1(arr: list) -> tuple: 
     start_time = time.perf_counter()
     best = 0 
     for i in range(len(arr)):
@@ -22,6 +22,29 @@ def max_subarray_sum(arr: list) -> tuple:
     
 def max_subarrary(arr: list) -> tuple: 
     pass
+
+def max_subarray_sum_2(arr: list) -> tuple: 
+    start_time = time.perf_counter()
+    best = 0 
+    for i in range(len(arr)):
+        sm = 0
+        for j in range(i):
+            sm += arr[j]
+            best = max(sm, best) 
+    end_time = time.perf_counter()
+
+    elapsed = (end_time - start_time) * 1000 
+    return (best, f"{elapsed}:.3f")
+
+def max_subarray_sum_3(arr: list) -> tuple: 
+    start_time = time.perf_counter()
+    beat = 0 
+    max_sum = []
+    for i in range(len(arr)):
+        max_sum.append(sum(arr[:i]))
+
+
+
 def main():
     # arr = list(map(int, input().split()))
     arr = list(map(int, "-1 2 4 -3 5 2 -5 2".split()))
