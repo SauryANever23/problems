@@ -18,7 +18,8 @@ def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
 def solve(n, m):
-    if n // m >= 1: 
+    empty_seats = n-m
+    if empty_seats >= m or abs(m-empty_seats) == 1:
         return "Yes"
     else: 
         return "No"
@@ -27,7 +28,8 @@ def main():
     try:
         t = 1
         for tc in range(1, t+1):
-            print(solve(map(int, input().split())))
+            n, m = map(int, input().split())
+            print(solve(n,m))
     except (ValueError, IndexError):
         pass 
 
