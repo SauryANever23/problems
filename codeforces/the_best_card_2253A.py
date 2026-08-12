@@ -18,6 +18,22 @@ def insr():     return input().strip()
 def invr():     return map(int, input().split())
 
 
+def is_prime(n: int) -> bool: 
+    if n == 2 or n == 3: 
+        return True 
+
+    if n % 2 == 0 or n % 3 == 0: 
+        return False
+    count = 0 
+    for i in range(1, n//2):
+        if n % i == 0: 
+            count += 1 
+
+    if count == 1: 
+        return True
+    else: 
+        return False
+
 
 def solve(n: int):
     """
@@ -30,7 +46,10 @@ def solve(n: int):
     the number of cards must be prime. 
     
     """
-    
+    if is_prime(n+1): 
+        return 'Yes'
+    else: 
+        return 'No'
 
 def main():
     try:
