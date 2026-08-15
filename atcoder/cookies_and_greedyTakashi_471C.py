@@ -35,17 +35,20 @@ def solve(points: list):
     # total distance travelled 
     s = 0 
 
-    while len(points) > 1: 
-        distance = []
-        for i in range(len(points)): 
-            distance.append((i, abs(cnt_pos-points[i])))
-        distance.sort(key=lambda x: (x[0], x[1]), reverse=True)
-        mn_distance = distance[0][1]
-        cnt_pos = points[distance[0][0]]
-        s += mn_distance 
-        print('\n\n',points, '\n', distance,'\n\n')
-        points.remove(cnt_pos) 
-    
+    while len(points) > 0: 
+    distance = []
+    for i in range(len(points)): 
+        distance.append((i, abs(cnt_pos-points[i])))
+    # distance.sort(key=lambda x: x[1])
+    mn_distance = min(x[i] for x in distance)
+    # removing all elements whose distance is not mn mn_distance 
+    cnt_pos = min(
+            points[i] for i, d in distance 
+            if d == mn_distance 
+            )
+    s += mn_distance 
+    points.remove(cnt_pos) 
+
     return s 
 
 def main():
