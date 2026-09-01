@@ -36,26 +36,9 @@ void solve() {
     // Write your problem logic here
     long long n; 
     long long k; 
-    string str; 
+    string s; 
     cin >> n >> k; 
-    cin >> str;
-    const int MAXN = 200000;
-    bitset<MAXN> s;
-    for (int i = 0; i < n; i++) {
-        s[i] = str[i] - '0';
-    }
-    for (long long i = 0; i < n-k; i++)
-    {
-      if (s[i] && s[i+k])
-      {
-        s[i] = 0; 
-        s[i+k] = 0;
-      }
-    }
-    
-    if (s.count() > 0) cout << "NO" << "\n"; 
-    else cout << "YES" << "\n";
-    
+    cin >> s;
 }
 
 int main() {
