@@ -32,13 +32,14 @@ const ll LINF = 1e18 + 7;
 const int MOD = 1e9 + 7; // or 998244353
 
 // Core logic for a single testcase
-void solve() {
-    // Write your problem logic here
-    long long n; 
-    long long k; 
-    string s; 
-    cin >> n >> k; 
-    cin >> s;
+int solve(int a, int b, int c) {
+    
+    b /= 2; 
+    c /= 4; 
+
+    int n = min<int>({a,b,c}); 
+    int ans = n*7; 
+    return ans; 
 }
 
 int main() {
@@ -47,10 +48,14 @@ int main() {
     cin.tie(nullptr);
     
     int t = 1;
-    cin >> t; // Comment this out if the problem has only 1 test case
+    // cin >> t; // Comment this out if the problem has only 1 test case
     
     while (t--) {
-        solve();
+        int a, b, c; 
+        cin >> a; 
+        cin >> b; 
+        cin >> c; 
+        cout << solve(a,b,c) << "\n";
     }
     
     return 0;
