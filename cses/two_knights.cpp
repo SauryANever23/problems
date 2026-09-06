@@ -48,38 +48,40 @@ void solve(long k) {
     //
     // or maybe just check if a wall is interfereing?? 
     
-    long long ans; 
-
-    long tot = k*k; 
-
-    for (int i = 1; i<=k;i++)
-    {
-      for (int j = 1; j<=k; j++)
-      {
-        vector<bool> blocks(4);
-        if ((k-j)<=1)
-        {
-          blocks[0] = true;
-        }
-        if ((j-1)<= 1)
-        {
-          blocks[1] = true; 
-        }
-        if (i - 1 <= 1)
-        {
-          blocks[2] = true;
-        }
-        if (k-1 <= 1)
-        {
-          blocks[3] = true; 
-        }
-
-        ans += tot - (8 - count(blocks.begin(), blocks.end(), true));
-      }
-    }
-
-    cout << ans << "\n";
- }
+    // long long ans; 
+    //
+    // long tot = k*k; 
+    //
+    // for (int i = 1; i<=k;i++)
+    // {
+    //   for (int j = 1; j<=k; j++)
+    //   {
+    //     vector<bool> blocks(4);
+    //     if ((k-j)<=1)
+    //     {
+    //       blocks[0] = true;
+    //     }
+    //     if ((j-1)<= 1)
+    //     {
+    //       blocks[1] = true; 
+    //     }
+    //     if (i - 1 <= 1)
+    //     {
+    //       blocks[2] = true;
+    //     }
+    //     if (k-1 <= 1)
+    //     {
+    //       blocks[3] = true; 
+    //     }
+    //
+    //     ans += tot - (8 - count(blocks.begin(), blocks.end(), true));
+    //   }
+    // }
+    //
+ 
+    // try deriving a genral mathematical formula 
+    //
+}
 
 int main() {
     // Optimize standard I/O operations for performance
