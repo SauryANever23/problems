@@ -20,20 +20,19 @@ def invr():     return map(int, input().split())
 def solve():
     n = inp()
     a = init()
-    
-    if len(set(a)) == 1: 
-        print(n)
-        return 
+    """
+    // we can reduce as may times as we like by 2, 
+    // abs 
 
-    ao = [i for i in a if i %2 != 0]
-    ae = [i for i in a if i %2 == 0]
-    ae1 = [i for i in ae if i % 4 == 0]   
-    ae2 = [i for i in ae if i % 4 != 0]
-    # how do i figure out if thiery on the same state?? 
-    print(max(len(ao), len(ae1), len(ae2)))
-    # count = Counter(a)
-    # print(count.most_common(1)[0][1])
+    // all odd numbers amount to 1 in the end 
+    // all even numebr either 0 or 2, if the number are divisilbe by 4, they both are in the same sta     te, if they are not divisible for 4, they are in differtm state 
+    """ 
+    o = [i for i in a if i % 2 !=0]
+    e1 = [i for i in a if i%4==0]
+    e2 = [i for i in a if (i%4!=0 and i%2==0)]
 
+    print(max(len(o), len(e1), len(e2)))
+  
 def main():
     try:
         t = inp()
