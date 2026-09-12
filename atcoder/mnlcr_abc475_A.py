@@ -1,0 +1,46 @@
+import collections 
+import heapq 
+import itertools 
+import math 
+import os 
+import sys 
+
+# setting recursive limits 
+sys.setrecursionlimit(2000000)
+
+input = sys.stdin.readline 
+def print(*args, sep=" ", end="\n"):
+    sys.stdout.write(sep.join(map(str, args)) + end)
+
+def inp():      return int(input())
+def init():     return list(map(int, input().split()))
+def insr():     return input().strip()
+def invr():     return map(int, input().split())
+
+def solve(tc: int):
+    """
+
+    """ 
+    s = input().strip()
+    ls = list(s)
+    r = ""
+    for i in ls: 
+        r += i 
+        r += 'o' 
+    lr = list(r)
+    lr.pop()
+
+    r = "".join(lr)
+
+    print(r)
+
+def main():
+    t = 1
+    for tc in range(1, t+1):
+        solve(tc)
+
+if __name__ == '__main__':
+    main()
+
+
+
